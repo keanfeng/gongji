@@ -4,6 +4,18 @@ import java.util.Arrays;
 
 public class ByteUtil {
 	
+	
+	public static int bytesToInt(byte[] src){
+		int intValue = 0;
+		if(src == null || src.length <= 0){
+			return 0;
+		}
+        for (int i = 0; i < src.length; i++) {
+            intValue += (src[i] & 0xFF) << (8 * (3 - i));
+        }
+        return intValue;
+	}
+	
 	/**
 	 * Convert byte[] to hex string.这里我们可以将byte转换成int，然后利用Integer.toHexString(int)来转换成16进制字符串。  
 	 * @param src byte[] data  
@@ -103,7 +115,7 @@ public class ByteUtil {
 	 
 	 public static void testArrayCopy(){
 		 int[] arr6 = {3, 7, 2, 1};
-		 int[] arr7=Arrays.copyOf(arr6, 2);
+		 int[] arr7=Arrays.copyOf(arr6, 12);
 		 
 		 System.out.println(Arrays.toString(arr6));
 		 System.out.println(Arrays.toString(arr7));

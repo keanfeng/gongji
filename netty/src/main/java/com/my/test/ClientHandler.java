@@ -5,9 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
 
-import java.util.Arrays;
-
-import com.my.test.utils.ByteUtil;
+import com.my.test.bean.DataPackage;
 
 public class ClientHandler extends ChannelInboundHandlerAdapter {
 
@@ -20,11 +18,13 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 				byte[] data = new byte[buf.readableBytes()];
 				buf.readBytes(data);
 				
-				System.out.println(ByteUtil.bytesToHexString(data,false));
-				System.out.println(Arrays.toString(ByteUtil.bytesToHexs(data)));
+				DataPackage.analysis(data);
 				
-				String request = new String(data, "GBK");
-				System.out.println("Client: " + request);
+//				System.out.println(ByteUtil.bytesToHexString(data,false));
+//				System.out.println(Arrays.toString(ByteUtil.bytesToHexs(data)));
+				
+//				String request = new String(data, "GBK");
+//				System.out.println("Client: " + request);
 				count++;
 				System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> " + count);
 		} finally {
