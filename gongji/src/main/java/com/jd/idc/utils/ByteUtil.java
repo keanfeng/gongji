@@ -1,4 +1,4 @@
-package com.my.test.utils;
+package com.jd.idc.utils;
 
 import java.util.Arrays;
 
@@ -17,7 +17,7 @@ public class ByteUtil {
 	}
 	
 	/**
-	 * Convert byte[] to hex string.这里我们可以将byte转换成int，然后利用Integer.toHexString(int)来转换成16进制字符串。  
+	 * Convert byte[] to hex string.这里我们可以将byte转换成int，然后利用Integer.toHexString(int)来转换成16进制字符串�?  
 	 * @param src byte[] data  
 	 * @return hex string  
 	 */     
@@ -89,7 +89,7 @@ public class ByteUtil {
 	    return (byte) "0123456789ABCDEF".indexOf(c);  
 	}  
 	 
-	//将指定byte数组以16进制的形式打印到控制台  
+	//将指定byte数组�?6进制的形式打印到控制�? 
 	public static void printHexString( byte[] b) {    
 	    for (int i = 0; i < b.length; i++) {   
 	      String hex = Integer.toHexString(b[i] & 0xFF);   
@@ -122,10 +122,6 @@ public class ByteUtil {
 	 }
 	 
 	 public static void main(String args[]){
-//		 ByteUtil.testArrayCopy();
-		 
-		 String a = "0123456789";
-		 System.out.println(a.substring(a.length()-1));
-		 
+		 ByteUtil.testArrayCopy();
 	 }
 }
